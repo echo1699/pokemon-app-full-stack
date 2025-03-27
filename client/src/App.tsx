@@ -1,14 +1,34 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import axios from "axios"
+import Loader from './components/Loader'
+import Pokemon from './components/Pokemon'
 
 function App() {
-  const [array, setArray] = useState([])
+  const [pokemon, setArray] = useState([])
+  const [error, setError] = useState({})
+
+  interface Pokemon {
+    abilities?: string;
+    genus: string;
+    height: number;
+    id: number;
+    katakana: string;
+    name: string;
+    types?: string;
+    weight: number;
+  }
 
   const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:3000/pokemon")
-    setArray(response.data)
-    console.log(response.data)
+    try {
+      const response = await axios.get(`http://localhost:3000/pokemon`)
+      setArray(response.data.slice(0,10))
+      //console.log(response.data)
+    } catch (err: any) {
+      setError(err)
+      console.log(error)
+    }
+    
   }
 
   useEffect(() => {
@@ -18,16 +38,10 @@ function App() {
   return (
     <>
       <div>
-        <ul>
-        {
-          array.map((pokemon, index) => (
-            <li key={index}>
-              <p>Name: {pokemon.name}</p>
-              <p>Id: {pokemon.id}</p>
-            </li>
-          ))
-        }
-        </ul>
+        {pokemon.length > 0 ? pokemon.map((pkm:Pokemon) => 
+        <Pokemon pkm={pkm}/>) 
+        : 
+        (<Loader />)}
       </div>
     </>
   )
