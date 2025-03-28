@@ -9,7 +9,7 @@ const PokeImage:React.FC<Props> = ({crrtPkm}) => {
     <>
       <img 
         className='pokemon-image'
-        src={`../../sprites/sprites/pokemon/other/official-artwork/${crrtPkm}.png`}
+        src={`../../public/png/official-artwork/${crrtPkm}.png`}
         alt={`Image ${crrtPkm}`}
       />
     </>
