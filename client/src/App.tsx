@@ -7,6 +7,7 @@ import Pokemon from './components/Pokemon'
 function App() {
   const [pokemon, setArray] = useState([])
   const [error, setError] = useState({})
+  const currentPkm: number = 150;
 
   interface Pokemon {
     abilities?: string;
@@ -22,7 +23,7 @@ function App() {
   const fetchAPI = async () => {
     try {
       const response = await axios.get(`http://localhost:3000/pokemon`)
-      setArray(response.data.slice(0,10))
+      setArray(response.data)
       //console.log(response.data)
     } catch (err: any) {
       setError(err)
@@ -37,9 +38,9 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='pokedex'>
         {pokemon.length > 0 ? pokemon.map((pkm:Pokemon) => 
-        <Pokemon pkm={pkm}/>) 
+        <Pokemon pkm={pkm} crrtPkm={currentPkm}/>) 
         : 
         (<Loader />)}
       </div>
