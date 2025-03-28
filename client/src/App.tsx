@@ -3,22 +3,23 @@ import './App.css'
 import axios from "axios"
 import Loader from './components/Loader'
 import Pokemon from './components/Pokemon'
+import { PokemonType } from './types/Pokemon.types'
+import { Capitalize } from './components/Capitalize'
 
 function App() {
   const [pokemon, setArray] = useState([])
   const [error, setError] = useState({})
-  const currentPkm: number = 150;
+  const currentPkm: number = 50;
 
-  interface Pokemon {
-    abilities?: string;
-    genus: string;
-    height: number;
-    id: number;
-    katakana: string;
-    name: string;
-    types?: string;
-    weight: number;
-  }
+  const prevPkm: any = (pokemon.map((pkm:PokemonType) => {
+    if (pkm.id ===(currentPkm - 1))
+      return Capitalize(pkm.name)
+  }))
+
+  const nextPkm: any = (pokemon.map((pkm:PokemonType) => {
+    if (pkm.id ===(currentPkm + 1))
+      return Capitalize(pkm.name)
+  }))
 
   const fetchAPI = async () => {
     try {
@@ -39,8 +40,8 @@ function App() {
   return (
     <>
       <div className='pokedex'>
-        {pokemon.length > 0 ? pokemon.map((pkm:Pokemon) => 
-        <Pokemon pkm={pkm} crrtPkm={currentPkm}/>) 
+        {pokemon.length > 0 ? pokemon.map((pkm:PokemonType) => 
+        <Pokemon pkm={pkm} crrtPkm={currentPkm} nextPkm={nextPkm} prevPkm={prevPkm} />) 
         : 
         (<Loader />)}
       </div>

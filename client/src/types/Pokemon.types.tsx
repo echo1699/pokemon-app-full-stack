@@ -1,10 +1,10 @@
 export type PokemonType = {
-  abilities?: string;
+  abilities: any;
   genus: string;
   height: number;
   id: number;
   katakana: string;
   name: string;
-  types?: string;
+  types: any;
   weight: number;
 }
