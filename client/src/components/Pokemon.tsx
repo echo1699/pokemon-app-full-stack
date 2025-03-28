@@ -1,6 +1,6 @@
 import React from 'react'
 import { PokemonType } from '../types/Pokemon.types'
-import PokeImage from './Pokeimage';
+import PokeImage from './PokeImage'
 
 interface Props {
   pkm: PokemonType;
