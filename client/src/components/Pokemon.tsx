@@ -45,7 +45,7 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm}) => {
               <div className="category">TYPE</div>
               {
                 pkm.types.map((ty:Types) => 
-                <div className="category-objects">{Capitalize(ty.type.name)}</div>)
+                <div className={`category-objects types ${ty.type.name}`}>{Capitalize(ty.type.name)}</div>)
               }
             </div>
             <div className="category-container">

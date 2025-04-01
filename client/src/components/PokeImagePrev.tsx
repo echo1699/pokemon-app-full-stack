@@ -5,15 +5,21 @@ interface Props {
 }
 
 const PokeImagePrev:React.FC<Props> = ({crrtPkm}) => {
-  return (
-    <>
-      <img 
-        className='previous-pokemon-image'
-        src={`../../public/png/official-artwork/${crrtPkm - 1}.png`}
-        alt={`Image ${crrtPkm - 1}`}
-      />
-    </>
-  )
+  if (crrtPkm > 2) {
+    return (
+      <>
+        <img 
+          className='previous-pokemon-image'
+          src={`../../public/png/official-artwork/${crrtPkm - 1}.png`}
+          alt={`Image ${crrtPkm - 1}`}
+        />
+      </>
+    )
+  } else {
+    return (
+      <></>
+    )
+  }
 }
 
 export default PokeImagePrev;

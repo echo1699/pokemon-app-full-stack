@@ -9,7 +9,7 @@ import { Capitalize } from './components/Capitalize'
 function App() {
   const [pokemon, setArray] = useState([])
   const [error, setError] = useState({})
-  const currentPkm: number = 50;
+  const currentPkm: number = 151;
 
   const prevPkm: any = (pokemon.map((pkm:PokemonType) => {
     if (pkm.id ===(currentPkm - 1))
