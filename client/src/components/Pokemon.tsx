@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { PokemonType } from '../types/Pokemon.types'
 import { TypesType } from '../types/Types.types'
 import PokeImage from './PokeImage'
 import PokeImagePrev from './PokeImagePrev'
 import PokeImageNext from './PokeImageNext'
 import { Capitalize } from './Capitalize'
+import Slider from './Slider'
 
 interface Props {
   pkm: PokemonType;
@@ -25,6 +26,7 @@ interface Abilities {
 }
 
 const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm}) => {
+  const [isShiny, setShiny] = useState(false)
   if (pkm.id === crrtPkm)
     return (
       <>
@@ -59,7 +61,8 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm}) => {
             </div>
           </div>
           <div className="pokemon-image-container">
-            <PokeImage crrtPkm={pkm.id}/>
+            <Slider onCheck={setShiny}/>
+            <PokeImage crrtPkm={pkm.id} shiny={isShiny} />
           </div>
           <div className="pokemon-stats-container">
             <div className="category-container">
