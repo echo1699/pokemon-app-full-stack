@@ -5,7 +5,7 @@ interface Props {
 }
 
 const PokeImageNext:React.FC<Props> = ({crrtPkm}) => {
-  if (crrtPkm < 150) {
+  if (crrtPkm < 151) {
     return (
       <>
         <img 
