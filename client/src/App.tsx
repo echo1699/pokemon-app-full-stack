@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import './styles/Container.css'
+import './styles/Pokedex.css'
 import axios from "axios"
 import Loader from './components/Loader'
 import Pokemon from './components/Pokemon'
@@ -9,7 +11,7 @@ import { Capitalize } from './components/Capitalize'
 function App() {
   const [pokemon, setArray] = useState([])
   const [error, setError] = useState({})
-  const currentPkm: number = 151;
+  const currentPkm: number = 54;
 
   const prevPkm: any = (pokemon.map((pkm:PokemonType) => {
     if (pkm.id ===(currentPkm - 1))
@@ -21,6 +23,7 @@ function App() {
       return Capitalize(pkm.name)
   }))
 
+
   const fetchAPI = async () => {
     try {
       const response = await axios.get(`http://localhost:3000/pokemon`)
@@ -30,7 +33,7 @@ function App() {
       setError(err)
       console.log(error)
     }
-    
+
   }
 
   useEffect(() => {
@@ -39,7 +42,7 @@ function App() {
 
   return (
     <>
-      <div className='pokedex'>
+      <div className="pokedex">
         {pokemon.length > 0 ? pokemon.map((pkm:PokemonType) => 
         <Pokemon pkm={pkm} crrtPkm={currentPkm} nextPkm={nextPkm} prevPkm={prevPkm} />) 
         : 

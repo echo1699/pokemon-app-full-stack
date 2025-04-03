@@ -1,8 +1,7 @@
-.pokedex {
+.pokedexContainer {
   display: flex;
   width: 100%;
   height: 100vh;
-  background-color: white;
   justify-content: center;
 }
 
@@ -44,8 +43,6 @@
   border-style: solid;
   border-width: 5px;
   border-color: black;
-  background-color: rgb(163, 103, 19);
-  color: white;
   height: 110px;
   align-items: center;
   justify-content: center;
@@ -84,7 +81,6 @@
   border-style: solid;
   border-width: 5px;
   border-color: black;
-  background-color: rgb(163, 103, 19);
   border-radius: 20px;
   flex: 1;
   padding-top: 20px;
@@ -101,7 +97,6 @@
   border-style: solid;
   border-width: 5px;
   border-color: black;
-  background-color: rgb(163, 103, 19);
   border-radius: 20px;
   flex: 1;
   padding-top: 20px;
@@ -112,7 +107,6 @@
   display: flex;
   flex: 1;
   justify-content: center;
-  
   left: 0;
   right: 0;
 }
@@ -131,7 +125,6 @@
 }
 
 .category {
-  color: white;
   font-size: 22px;
   font-weight: bold;
   text-shadow: 0 1px 7px black;
@@ -139,7 +132,6 @@
 }
 
 .category-objects{
-  color: white;
   font-size: 20px;
   text-shadow: 0 1px 7px black;
   display: flex;
@@ -148,7 +140,6 @@
 }
 
 .category-katakana {
-  color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 0 1px 7px black;
@@ -172,7 +163,6 @@
   bottom: 0;
   border-width: 5px;
   border-color: black;
-  background-color: rgb(163, 103, 19);
   height: 110px;
   align-items: center;
   border-radius: 20px;
@@ -195,7 +185,6 @@
 .next-evolution-text, 
 .previous-evolution-pokemon, 
 .next-evolution-pokemon {
-  color: white;
   font-size: 24px;
   text-shadow: 0 1px 7px black;
   display: flex;  

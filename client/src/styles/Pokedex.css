@@ -1,0 +1,72 @@
+.fire-body {
+  background-color: rgb(255, 203, 108);
+}
+
+.water-body {
+  background-color: rgb(97, 97, 255);
+}
+
+.grass-body {
+  background-color: rgb(126, 255, 126);
+}
+
+.electric-body {
+  background-color: rgb(255, 255, 117);
+}
+
+.normal-body {
+  background-color: rgb(253, 253, 237);
+}
+
+.fighting-body {
+  background-color: rgb(255, 95, 95);
+}
+
+.poison-body {
+  background-color: rgb(255, 158, 255);
+
+}
+
+.flying-body {
+  background-color: rgb(194, 135, 246);
+}
+
+.ground-body {
+  background-color: rgb(240, 194, 140);
+}
+
+.bug-body {
+  background-color: rgb(196, 248, 120);
+}
+
+.rock-body {
+  background-color: rgb(237, 167, 110);
+}
+
+.ghost-body {
+  background-color: rgb(118, 81, 199);
+}
+
+.psychic-body {
+  background-color: rgb(248, 175, 188);
+}
+
+.ice-body {
+  background-color: rgb(156, 240, 255);
+}
+
+.dragon-body {
+  background-color: rgb(170, 134, 248);
+}
+
+.dark-body {
+  background-color: rgb(159, 113, 82);
+}
+
+.steel-body {
+  background-color: rgb(199, 199, 199);
+}
+
+.fairy-body {
+  background-color: rgb(255, 228, 233);
+}
