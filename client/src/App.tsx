@@ -11,7 +11,9 @@ import { Capitalize } from './components/Capitalize'
 function App() {
   const [pokemon, setArray] = useState([])
   const [error, setError] = useState({})
-  const currentPkm: number = 54;
+  //const currentPkm: number = 27;
+
+  const [currentPkm, setCurrentPkm] = useState(30)
 
   const prevPkm: any = (pokemon.map((pkm:PokemonType) => {
     if (pkm.id ===(currentPkm - 1))

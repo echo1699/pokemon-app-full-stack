@@ -1,8 +1,13 @@
+import loading from '../assets/mimikyu-loading.gif'
 
 const Loader = () => {
   return (
   <div className="loading">
-    Loading ...
+    <img 
+      className='loading-image'
+      src={loading}
+      alt="Mimikyu loading"
+    />
   </div>)
 }
 

@@ -14,6 +14,7 @@ const Slider:React.FC<Slider> = ({ onCheck }) => {
   return (
     <>
       <div className="shiny-switch">
+        <p className="shiny-text">Shiny</p>
         <label className="switch">
           <input type="checkbox" onChange={handleCheck}/>
           <span className="slider round"></span>

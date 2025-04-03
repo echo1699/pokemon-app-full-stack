@@ -16,13 +16,11 @@
 .electric {
   background-color: yellow;
   color: black;
-  text-shadow: 0px 0.5px 2px black;
 }
 
 .normal {
   background-color: beige;
   color: black;
-  text-shadow: 0px 0.5px 2px black;
 }
 
 .fighting {
@@ -48,7 +46,6 @@
 .bug {
   background-color: greenyellow;
   color: black;
-  text-shadow: 0px .5px 3px black;
 }
 
 .rock {
