@@ -124,6 +124,8 @@
   flex: 1;
   padding-top: 20px;
   padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .pokemon-stats-container {
@@ -140,6 +142,8 @@
   flex: 1;
   padding-top: 20px;
   padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .pokemon-image-container {
@@ -166,14 +170,16 @@
 .category {
   font-size: 22px;
   font-weight: bold;
-  margin-left: 8px;
+  margin-left: 5px;
+  display: flex;
+  justify-content: left;
 }
 
 .category-objects{
   font-size: 20px;
   display: flex;
   justify-content: right;
-  margin-right: 12px;
+  margin-right: 6px;
 }
 
 .category-katakana {
@@ -181,7 +187,7 @@
   font-weight: bold;
   display: flex;
   justify-content: right;
-  margin-right: 12px;
+  margin-right: 6px;
 }
 
 .bottom-part {

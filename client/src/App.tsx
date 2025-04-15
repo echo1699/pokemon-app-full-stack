@@ -13,7 +13,7 @@ function App() {
   const [error, setError] = useState({})
   //const currentPkm: number = 27;
 
-  const [currentPkm, setCurrentPkm] = useState(30)
+  const [currentPkm, setCurrentPkm] = useState(1)
 
   const prevPkm: any = (pokemon.map((pkm:PokemonType) => {
     if (pkm.id ===(currentPkm - 1))
