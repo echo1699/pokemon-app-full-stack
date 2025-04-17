@@ -5,15 +5,24 @@ import './styles/Pokedex.css'
 import axios from "axios"
 import Loader from './components/Loader'
 import Pokemon from './components/Pokemon'
+import UseLocalStorage from './components/UseLocalStorage'
 import { PokemonType } from './types/Pokemon.types'
 import { Capitalize } from './components/Capitalize'
+
+const pkmId = () => Number(localStorage.getItem('id')) || 1
 
 function App() {
   const [pokemon, setArray] = useState([])
   const [error, setError] = useState({})
   //const currentPkm: number = 27;
 
-  const [currentPkm, setCurrentPkm] = useState(1)
+  const [currentPkm, setCurrentPkm] = UseLocalStorage<number>('id', pkmId())
+  const [PP, setPP] = useState(currentPkm)
+
+  if(PP !== currentPkm) {
+    setPP(currentPkm)
+    setCurrentPkm(pkmId)
+  }
 
   const prevPkm: any = (pokemon.map((pkm:PokemonType) => {
     if (pkm.id ===(currentPkm - 1))
@@ -25,7 +34,6 @@ function App() {
       return Capitalize(pkm.name)
   }))
 
-
   const fetchAPI = async () => {
     try {
       const response = await axios.get(`http://localhost:3000/pokemon`)
@@ -35,7 +43,6 @@ function App() {
       setError(err)
       console.log(error)
     }
-
   }
 
   useEffect(() => {

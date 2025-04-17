@@ -2,8 +2,7 @@ import React, {useState} from 'react'
 import { PokemonType } from '../types/Pokemon.types'
 import { TypesType } from '../types/Types.types'
 import PokeImage from './PokeImage'
-import PokeImagePrev from './PokeImagePrev'
-import PokeImageNext from './PokeImageNext'
+import PNButton from './PreviousNextButtons'
 import { Capitalize } from './Capitalize'
 import Slider from './Slider'
 
@@ -27,6 +26,7 @@ interface Abilities {
 
 const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm}) => {
   const [isShiny, setShiny] = useState(false)
+
   const type: string = pkm.types[0].type.name
   if (pkm.id === crrtPkm)
     return (
@@ -82,26 +82,7 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm}) => {
               </div>
             </div>
           </div>
-          <div className="bottom-part">
-            <div className={`previous-evolution ${type}`}>
-              <div className="previous-pokemon-image-container">
-                <PokeImagePrev crrtPkm={pkm.id}/>
-              </div>
-              <div>
-                <div className="previous-evolution-text">PREVIOUS</div>
-                <div className="previous-evolution-pokemon">{prevPkm}</div>
-              </div>
-            </div>
-            <div className={`next-evolution ${type}`}>
-              <div>
-                <div className="next-evolution-text">NEXT</div>
-                <div className='next-evolution-pokemon'>{nextPkm}</div>
-              </div>
-              <div className="next-pokemon-image-container">
-                <PokeImageNext crrtPkm={pkm.id}/>
-              </div>
-            </div>
-          </div>
+          <PNButton pkm={pkm} crrtPkm={crrtPkm} nextPkm={nextPkm} prevPkm={prevPkm}/>
         </div>
       </>
     )

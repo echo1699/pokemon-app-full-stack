@@ -211,6 +211,10 @@
   flex: 1;
 }
 
+.previous-evolution:hover, .next-evolution:hover {
+  cursor: pointer;
+}
+
 .previous-evolution {
   margin-right: -2px;
   display:flex;
@@ -247,6 +251,19 @@
 
 .previous-pokemon-image, .next-pokemon-image {
   width: 200px;
+}
+
+.previous-pokemon-image:hover, .next-pokemon-image:hover {
+  width: 250px;
+  margin-bottom: 100px;
+}
+
+.previous-pokemon-image:hover {
+  rotate: 10deg;
+}
+
+.next-pokemon-image:hover {
+  rotate: -10deg;
 }
 
 .previous-pokemon-image-container, .next-pokemon-image-container {
