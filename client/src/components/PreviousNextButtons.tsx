@@ -1,9 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { PokemonType } from '../types/Pokemon.types'
 import PokeImagePrev from './PokeImagePrev'
 import PokeImageNext from './PokeImageNext'
 import { useNavigate } from 'react-router'
-import Pokemon from './Pokemon'
 
 interface Props {
   pkm: PokemonType;
@@ -14,21 +13,24 @@ interface Props {
 }
 
 const PNButton:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const handlePClick = () => {
-    const realValue = crrtPkm - 1;
+    const realValue = crrtPkm - 1
     if (realValue > 0) { // Ensure the ID doesn't go below 1
-      setCurrentPkm(realValue);
-      console.log(`Navigating to Pokémon with ID: ${realValue}`);
-      navigate('/pokedex?id=' + realValue);
+      setCurrentPkm(realValue)
+      console.log(`Navigating to Pokémon with ID: ${realValue}`)
+      navigate('/pokedex?id=' + realValue)
     }
-  };
+  }
 
   const handleNClick = () => {
-    const realValue = crrtPkm + 1;
-    setCurrentPkm(realValue);
-    navigate('/pokedex?id=' + realValue);
-  };
+    const realValue = crrtPkm + 1
+    if (realValue < 152) { // Ensure the ID doesn't go above 151
+      setCurrentPkm(realValue)
+      console.log(`Navigating to Pokémon with ID: ${realValue}`)
+      navigate('/pokedex?id=' + realValue)
+    }
+  }
 
   const type: string = pkm.types[0].type.name
     return (

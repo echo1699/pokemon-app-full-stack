@@ -1,22 +1,21 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import './styles/Container.css'
 import './styles/Pokedex.css'
 import axios from "axios"
 import Loader from './components/Loader'
 import Pokemon from './components/Pokemon'
-//import UseLocalStorage from './components/UseLocalStorage'
 import { PokemonType } from './types/Pokemon.types'
 import { Capitalize } from './components/Capitalize'
 import MainScreen from './components/MainScreen'
-import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom'
-
-//const pkmId = () => Number(localStorage.getItem('id')) || 1
+import { BrowserRouter as Router, Route, Routes, Link, useNavigate, useParams, useSearchParams, useLocation } from 'react-router-dom'
 
 function App() {
   const [pokemon, setArray] = useState([])
   const [error, setError] = useState({})
-  //const currentPkm: number = 27;
+
+  const { id } = useParams();
+  let nId = Number(id);
 
   const [currentPkm, setCurrentPkm] = useState<number>(1)
 
@@ -68,8 +67,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MainScreen currentPkm={currentPkm} setCurrentPkm={setCurrentPkm} />} />
-        <Route path="/pokedex" element={
+        <Route path="/" element={<MainScreen setCurrentPkm={setCurrentPkm} />} />
+        <Route path={`/pokedex`} element={
           <div className="pokedex">
             {pokemon.length > 0 ? pokemon.map((pkm:PokemonType) => 
             <Pokemon pkm={pkm} crrtPkm={currentPkm} nextPkm={nextPkm} prevPkm={prevPkm} setCurrentPkm={setCurrentPkm}/>) 

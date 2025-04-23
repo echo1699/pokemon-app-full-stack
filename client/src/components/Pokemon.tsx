@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams, useNavigate } from 'react-router-dom';
 import { PokemonType } from '../types/Pokemon.types'
 import { TypesType } from '../types/Types.types'
 import PokeImage from './PokeImage'
@@ -27,7 +27,13 @@ interface Abilities {
 }
 
 const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}) => {
+  const navigate = useNavigate()
   const [isShiny, setShiny] = useState(false)
+
+  const handleHomeClick = () => {
+    console.log(`Going back to home`)
+    navigate('/')
+  }
 
   const type: string = pkm.types[0].type.name
   if (pkm.id === crrtPkm)
@@ -84,6 +90,10 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}
               </div>
             </div>
           </div>
+          <button 
+            className={`home-button ${type}`}
+            onClick={handleHomeClick}
+            >Home</button>
           <PNButton 
             pkm={pkm} 
             crrtPkm={crrtPkm} 
