@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { PokemonType } from '../types/Pokemon.types'
 import { TypesType } from '../types/Types.types'
 import PokeImage from './PokeImage'
@@ -11,6 +12,7 @@ interface Props {
   crrtPkm: number;
   nextPkm: string;
   prevPkm: string;
+  setCurrentPkm: (value: number) => void;
 }
 
 interface Types {
@@ -24,7 +26,7 @@ interface Abilities {
   slot: number;
 }
 
-const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm}) => {
+const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}) => {
   const [isShiny, setShiny] = useState(false)
 
   const type: string = pkm.types[0].type.name
@@ -82,7 +84,12 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm}) => {
               </div>
             </div>
           </div>
-          <PNButton pkm={pkm} crrtPkm={crrtPkm} nextPkm={nextPkm} prevPkm={prevPkm}/>
+          <PNButton 
+            pkm={pkm} 
+            crrtPkm={crrtPkm} 
+            nextPkm={nextPkm} 
+            prevPkm={prevPkm} 
+            setCurrentPkm={setCurrentPkm} />
         </div>
       </>
     )
