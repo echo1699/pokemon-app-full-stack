@@ -7,7 +7,7 @@ const app = express();
 const corsOptions = {
   origin: ["http://localhost:5173"]
 }
-
+const port = process.env.PORT || 3000;
 app.use(cors(corsOptions));
 
 app.get('/pokemon', async (req, res) => {
@@ -27,6 +27,6 @@ app.get('/pokemon', async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Server started on port 3000");
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
 });
