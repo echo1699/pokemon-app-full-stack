@@ -7,25 +7,9 @@ export async function fetchPokemonData() {
     data.results.map( async (pkm) => {
       const { abilities, height, weight, id, name, species, types } = await fetchData(pkm.url);
       const { genera, names } = await fetchData(species.url);
-
-      let genus, katakana;
-      Promise.all(
-        genera.map((version) => {
-          const language = version.language;
-          if (language.name === "en") {
-            genus = version.genus;
-          }
-        })
-      );
-
-      Promise.all(
-        names.map((version) => {
-          const language = version.language;
-          if (language.name === "ja") {
-            katakana = version.name;
-          }
-        })
-      )
+      
+      const genusEntry = genera.find((entry) => entry.language.name === "en");
+      const nameEntry = names.find((entry) => entry.language.name === "ja");
 
       return {
         abilities,
@@ -34,8 +18,8 @@ export async function fetchPokemonData() {
         id,
         name,
         types,
-        genus,
-        katakana
+        genus: genusEntry?.genus || "",
+        katakana: nameEntry?.name || ""
       };
     })
   );
