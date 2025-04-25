@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import './styles/Container.css'
 import './styles/Pokedex.css'
@@ -8,14 +8,13 @@ import Pokemon from './components/Pokemon'
 import { PokemonType } from './types/Pokemon.types'
 import { Capitalize } from './components/Capitalize'
 import MainScreen from './components/MainScreen'
-import { BrowserRouter as Router, Route, Routes, Link, useNavigate, useParams, useSearchParams, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
   const [pokemon, setArray] = useState([])
   const [error, setError] = useState({})
 
-  const { id } = useParams();
-  let nId = Number(id);
+  //const { id } = useParams();
 
   const [currentPkm, setCurrentPkm] = useState<number>(1)
 
