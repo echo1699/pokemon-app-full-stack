@@ -79,7 +79,7 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}
               </div>
             </div>
             <div className="pokemon-image-container">
-              <Slider onCheck={setShiny}/>
+              <Slider onCheck={setShiny} type={type}/>
               <PokeImage crrtPkm={pkm.id} shiny={isShiny} />
             </div>
             <div className={`pokemon-stats-container ${type}`}>

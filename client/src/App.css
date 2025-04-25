@@ -79,15 +79,8 @@
 
 .shiny-switch {
   position: absolute;
-  top: 430px;
-  right: 15px;
-}
-
-.shiny-text {
-  position: absolute;
-  color: black;
-  bottom: 40px;
-  right: 10px;
+  top: 310px;
+  right: 8px;
 }
 
 .home-button {

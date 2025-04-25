@@ -3,9 +3,10 @@ import '../styles/Slider.css'
 
 interface Slider {
   onCheck: (isChecked: boolean) => void
+  type: string;
 }
  
-const Slider:React.FC<Slider> = ({ onCheck }) => {
+const Slider:React.FC<Slider> = ({ onCheck, type }) => {
   
   function handleCheck(event: React.ChangeEvent<HTMLInputElement>) {
     onCheck(event.target.checked)
@@ -13,8 +14,8 @@ const Slider:React.FC<Slider> = ({ onCheck }) => {
 
   return (
     <>
-      <div className="shiny-switch">
-        <p className="shiny-text">Shiny</p>
+      <div className={`shiny-switch ${type}`}>
+        <p className={`shiny-text`}>Shiny</p>
         <label className="switch">
           <input type="checkbox" onChange={handleCheck}/>
           <span className="slider round"></span>

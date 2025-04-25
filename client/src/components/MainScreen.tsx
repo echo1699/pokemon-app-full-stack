@@ -43,7 +43,7 @@ const MainScreen: React.FC<MainScreenProps> = ({setCurrentPkm }) => {
       </div>
       <button
         className='main-random-button' 
-        onClick={handleRandomClick}>{'Feeling lucky? (random pokemon)'}
+        onClick={handleRandomClick}>{'Feeling lucky? (Random Pokémon)'}
       </button>
     </div>
   )
