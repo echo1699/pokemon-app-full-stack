@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useLocation, useSearchParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { PokemonType } from '../types/Pokemon.types'
 import { TypesType } from '../types/Types.types'
 import PokeImage from './PokeImage'
