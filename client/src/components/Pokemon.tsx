@@ -6,6 +6,7 @@ import PokeImage from './PokeImage'
 import PNButton from './PreviousNextButtons'
 import { Capitalize } from './Capitalize'
 import Slider from './Slider'
+import random from '../assets/random-icon.png'
 
 interface Props {
   pkm: PokemonType;
@@ -33,6 +34,13 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}
   const handleHomeClick = () => {
     console.log(`Going back to home`)
     navigate('/')
+  }
+
+  const handleRandomClick = () => {
+    let randomValue = Math.floor(Math.random() * 151) + 1;
+    setCurrentPkm(randomValue)
+    console.log(`Generated a random Pokémon ID: ${randomValue}`)
+    navigate('/pokedex?id=' + randomValue)
   }
 
   const type: string = pkm.types[0].type.name
@@ -93,7 +101,16 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}
           <button 
             className={`home-button ${type}`}
             onClick={handleHomeClick}
-            >Home</button>
+            >Home
+          </button>
+          <button
+            className={`pokedex-random-button ${type}`} 
+            onClick={handleRandomClick}>
+              <img 
+                className={`random-icon-img ${type}`}
+                src={random}
+              />
+            </button>
           <PNButton 
             pkm={pkm} 
             crrtPkm={crrtPkm} 

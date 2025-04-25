@@ -41,6 +41,18 @@
   cursor: pointer;
 }
 
+.main-random-button {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 .main-screen > div > input {
   width: 400px;
   height: 50px;
@@ -85,15 +97,33 @@
   border-style: solid;
   border-width: 5px;
   border-color: black;
-  height: 80px;
-  font-size: 50px;
+  height: 60px;
+  font-size: 30px;
   font-weight: bold;
   border-radius: 20px;
   padding: 5px;
+  cursor: pointer;
 }
 
-.home-button:hover {
+.pokedex-random-button {
+  position: absolute;
+  top: 580px;
+  left: 105px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+  height: 60px;
+  border-radius: 20px;
+  padding: 5px;
   cursor: pointer;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.random-icon-img {
+  width: 45px;
 }
 
 .loading {

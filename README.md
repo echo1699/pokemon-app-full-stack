@@ -2,11 +2,11 @@
 
 ## Overview
 
-The Pokédex App is a web application built with Node.js and Express that allows users to view details about various Pokémon. The app fetches data from a Pokémon API and presents it in a user-friendly interface.
+The Pokédex App is a web application built with Node.js and Express that allows users to view details about various Pokémon. The app fetches data from a Pokémon API and presents it in a user-friendly interface. The frontend uses React, Typescript, and Vite, taking the data given by the backend (hosted using Google Cloud) and display it in a "Pokédex" like manner.
 
 ### Features
 
-Search for Pokémon by name or ID
+Search for Pokémon by ID
 
 View detailed stats, abilities, and type information
 
@@ -16,7 +16,7 @@ Lightweight and fast performance
 
 Technologies Used
 
-### Backend: Node.js, Express
+### Backend: Node.js, Express, Google Cloud
 
 ### Frontend: HTML, CSS, JavaScript, Typescript, React
 

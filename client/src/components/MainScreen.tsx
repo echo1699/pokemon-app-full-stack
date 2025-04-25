@@ -22,6 +22,13 @@ const MainScreen: React.FC<MainScreenProps> = ({setCurrentPkm }) => {
     }
   }
 
+  const handleRandomClick = () => {
+    let randomValue = Math.floor(Math.random() * 151) + 1;
+    setCurrentPkm(randomValue)
+    console.log(`Generated a random Pokémon ID: ${randomValue}`)
+    navigate('/pokedex?id=' + randomValue)
+  }
+
   return (
     <div className='main-screen'>
       <h1>Welcome to the Pokédex App</h1>
@@ -34,6 +41,10 @@ const MainScreen: React.FC<MainScreenProps> = ({setCurrentPkm }) => {
           ></input>
         <button onClick={handleSearchClick}>Search</button>
       </div>
+      <button
+        className='main-random-button' 
+        onClick={handleRandomClick}>{'Feeling lucky? (random pokemon)'}
+      </button>
     </div>
   )
 };
