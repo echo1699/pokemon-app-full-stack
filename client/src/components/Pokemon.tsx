@@ -107,7 +107,7 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}
             className={`pokedex-random-button ${type}`} 
             onClick={handleRandomClick}>
               <img 
-                className={`random-icon-img ${type}`}
+                className={`random-icon-img`}
                 src={random}
               />
             </button>

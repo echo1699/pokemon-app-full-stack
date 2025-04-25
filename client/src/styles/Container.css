@@ -87,3 +87,57 @@
   background-color: pink;
   color: black;
 }
+
+.water .random-icon-img {
+  filter: invert(1);
+}
+
+.grass .random-icon-img {
+  filter: invert(1);
+}
+
+.fighting .random-icon-img {
+  filter: invert(1);
+}
+
+.poison .random-icon-img {
+  filter: invert(1);
+}
+
+.flying .random-icon-img {
+  filter: invert(1);
+}
+
+.ground .random-icon-img {
+  filter: invert(1);
+}
+
+
+.rock .random-icon-img {
+  filter: invert(1);
+}
+
+.ghost .random-icon-img {
+  filter: invert(1);
+}
+
+.psychic .random-icon-img {
+  filter: invert(1);
+}
+
+.ice .random-icon-img {
+  filter: invert(1);
+}
+
+.dragon .random-icon-img {
+  filter: invert(1);
+}
+
+.dark .random-icon-img {
+  filter: invert(1);
+}
+
+.steel .random-icon-img {
+  filter: invert(1);
+}
+
