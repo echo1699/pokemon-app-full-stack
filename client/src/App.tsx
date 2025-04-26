@@ -43,26 +43,6 @@ function App() {
     fetchAPI()
   }, [])
 
-  /*
-  return (
-    <>
-      <div className="pokedex">
-        {pokemon.length > 0 ? pokemon.map((pkm:PokemonType) => 
-        <Pokemon pkm={pkm} crrtPkm={currentPkm} nextPkm={nextPkm} prevPkm={prevPkm} />) 
-        : 
-        (<Loader />)}
-      </div>
-    </>
-  )
-  
-  return (
-    <>
-      <MainScreen currentPkm={currentPkm} setCurrentPkm={setCurrentPkm}/>
-    </>
-  )
-
-  */
-
   return (
     <Router>
       <Routes>
