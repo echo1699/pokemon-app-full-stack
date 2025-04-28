@@ -32,6 +32,8 @@ const PokedexPage: React.FC<PokedexPageProps> = ({ pokemon, setCurrentPkm }) => 
       crrtPkm={id}
       nextPkm={nextPkm}
       prevPkm={prevPkm}
+      nextPkmImg={pokemon.find((pkm) => pkm.id === id + 1)?.sprites.front || ''}
+      prevPkmImg={pokemon.find((pkm) => pkm.id === id - 1)?.sprites.front || ''}
       setCurrentPkm={setCurrentPkm}
     />
   );

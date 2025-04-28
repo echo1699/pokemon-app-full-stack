@@ -1,0 +1,14 @@
+runtime: nodejs22
+
+instance_class: F2  # Optional: Adjust instance class based on your app's needs
+
+handlers:
+  # Serve static files (CSS, JS, images, fonts, etc.)
+  - url: /(.*\.(css|js|html|png|jpg|jpeg|gif|ico|svg|woff2?|ttf|eot|otf))$
+    static_files: dist/\1
+    upload: dist/(.*\.(css|js|html|png|jpg|jpeg|gif|ico|svg|woff2?|ttf|eot|otf))$
+
+  # Catch-all handler to serve index.html for React routes
+  - url: /.*
+    static_files: dist/index.html
+    upload: dist/index.html

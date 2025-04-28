@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "test": "vitest",
-    "build": "tsc -b && vite build",
+    "build": "tsc && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy-gcp": "gsutil cp -r dist/* gs://example_bucket1_app"
   },
   "dependencies": {
     "@types/react-router": "^5.1.20",

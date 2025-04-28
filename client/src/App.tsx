@@ -31,7 +31,7 @@ function App() {
 
   const fetchAPI = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/pokemon`)
+      const response = await axios.get(`https://pokemon-app-full-stack-831381062774.us-central1.run.app/pokemon`)
       setArray(response.data)
       //console.log(response.data)
     } catch (err: any) {

@@ -1,0 +1,25 @@
+{
+  "name": "pokemon-app-full-stack",
+  "version": "1.0.0",
+  "description": "The Pokédex App is a web application built with Node.js and Express that allows users to view details about various Pokémon. The app fetches data from a Pokémon API and presents it in a user-friendly interface. The frontend uses React, Typescript, and Vite, taking the data given by the backend (hosted using Google Cloud) and display it in a \"Pokédex\" like manner.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/echo1699/pokemon-app-full-stack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/echo1699/pokemon-app-full-stack/issues"
+  },
+  "homepage": "https://github.com/echo1699/pokemon-app-full-stack#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
