@@ -11,10 +11,8 @@ import MainScreen from './components/MainScreen'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
-  const [pokemon, setArray] = useState([])
+  const [pokemon, setArray] = useState<PokemonType[]>([])
   const [error, setError] = useState({})
-
-  //const { id } = useParams();
 
   const [currentPkm, setCurrentPkm] = useState<number>(1)
 
@@ -28,9 +26,12 @@ function App() {
       return Capitalize(pkm.name)
   }))
 
+  const prevPkmImg = pokemon.find((pkm) => pkm.id === currentPkm - 1)?.sprites.front
+  const nextPkmImg = pokemon.find((pkm) => pkm.id === currentPkm + 1)?.sprites.front
+
   const fetchAPI = async () => {
     try {
-      const response = await axios.get(`https://pokedex-api-831381062774.us-central1.run.app/pokemon`)
+      const response = await axios.get(`http://localhost:3000/pokemon`)
       setArray(response.data)
       //console.log(response.data)
     } catch (err: any) {
@@ -50,7 +51,7 @@ function App() {
         <Route path={`/pokedex`} element={
           <div className="pokedex">
             {pokemon.length > 0 ? pokemon.map((pkm:PokemonType) => 
-            <Pokemon pkm={pkm} crrtPkm={currentPkm} nextPkm={nextPkm} prevPkm={prevPkm} setCurrentPkm={setCurrentPkm}/>) 
+            <Pokemon pkm={pkm} crrtPkm={currentPkm} nextPkm={nextPkm} prevPkm={prevPkm} nextPkmImg={nextPkmImg || ''} prevPkmImg={prevPkmImg || ''} setCurrentPkm={setCurrentPkm}/>) 
             : 
             (<Loader />)}
           </div>

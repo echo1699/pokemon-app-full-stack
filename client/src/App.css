@@ -236,6 +236,7 @@
   display: flex;
   flex: 1;
   justify-content: center;
+  align-items: center;
   left: 0;
   right: 0;
 }
@@ -336,12 +337,12 @@
 }
 
 .previous-pokemon-image, .next-pokemon-image {
-  width: 200px;
+  width: 300px;
 }
 
 .previous-pokemon-image:hover, .next-pokemon-image:hover {
-  width: 250px;
-  margin-bottom: 100px;
+  width: 450px;
+  margin-bottom: 80px;
 }
 
 .previous-pokemon-image:hover {
@@ -353,13 +354,14 @@
 }
 
 .previous-pokemon-image-container, .next-pokemon-image-container {
-  margin-bottom: 90px;
+  margin-bottom: 130px;
 }
 
 .previous-pokemon-image-container {
-  margin-left: 30px;
+  margin-left: -50px;
+
 }
 
 .next-pokemon-image-container {
-  margin-right: 30px;
+  margin-right: -50px;
 }

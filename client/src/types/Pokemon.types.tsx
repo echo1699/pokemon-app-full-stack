@@ -7,4 +7,10 @@ export type PokemonType = {
   name: string;
   types: any;
   weight: number;
+  sprites: {
+    front: string;
+    back: string;
+    shiny: string;
+    shinyack: string;
+  };
 }

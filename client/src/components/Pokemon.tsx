@@ -13,6 +13,8 @@ interface Props {
   crrtPkm: number;
   nextPkm: string;
   prevPkm: string;
+  nextPkmImg: string;
+  prevPkmImg: string;
   setCurrentPkm: (value: number) => void;
 }
 
@@ -27,7 +29,7 @@ interface Abilities {
   slot: number;
 }
 
-const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}) => {
+const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, nextPkmImg, prevPkmImg, setCurrentPkm}) => {
   const navigate = useNavigate()
   const [isShiny, setShiny] = useState(false)
 
@@ -47,6 +49,7 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}
   if (pkm.id === crrtPkm)
     return (
       <>
+
         <div className={`pokedexContainer ${type}-body`}>
           <div className="upper-part">
             <div className={`upper-id ${type}`}>{pkm.id}</div>
@@ -80,7 +83,7 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}
             </div>
             <div className="pokemon-image-container">
               <Slider onCheck={setShiny} type={type}/>
-              <PokeImage crrtPkm={pkm.id} shiny={isShiny} />
+              <PokeImage crrtPkm={crrtPkm} frontImg={pkm.sprites.front} shinyImg={pkm.sprites.shiny} shiny={isShiny}/>
             </div>
             <div className={`pokemon-stats-container ${type}`}>
               <div className="category-container">
@@ -115,7 +118,9 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}
             pkm={pkm} 
             crrtPkm={crrtPkm} 
             nextPkm={nextPkm} 
-            prevPkm={prevPkm} 
+            prevPkm={prevPkm}
+            nextPkmImg={nextPkmImg}
+            prevPkmImg={prevPkmImg} 
             setCurrentPkm={setCurrentPkm} />
         </div>
       </>

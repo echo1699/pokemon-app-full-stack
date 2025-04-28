@@ -5,7 +5,7 @@ export async function fetchPokemonData() {
 
   const all = await Promise.all(
     data.results.map( async (pkm) => {
-      const { abilities, height, weight, id, name, species, types } = await fetchData(pkm.url);
+      const { abilities, height, weight, id, name, species, types, sprites } = await fetchData(pkm.url);
       const { genera, names } = await fetchData(species.url);
       
       const genusEntry = genera.find((entry) => entry.language.name === "en");
@@ -19,7 +19,13 @@ export async function fetchPokemonData() {
         name,
         types,
         genus: genusEntry?.genus || "",
-        katakana: nameEntry?.name || ""
+        katakana: nameEntry?.name || "",
+        sprites: {
+          front: sprites.front_default,
+          back: sprites.back_default,
+          shiny: sprites.front_shiny,
+          shinyBack: sprites.back_shiny,
+        }
       };
     })
   );

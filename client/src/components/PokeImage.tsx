@@ -2,16 +2,18 @@ import React from 'react'
 
 interface Props {
   crrtPkm: number;
+  frontImg: string;
+  shinyImg: string;
   shiny: boolean;
 }
 
-const PokeImage:React.FC<Props> = ({crrtPkm, shiny}) => {
+const PokeImage:React.FC<Props> = ({crrtPkm, frontImg, shinyImg, shiny}) => {
 
   return (
     <>
       <img 
         className='pokemon-image'
-        src={`../../public/png/official-artwork${shiny ? '/shiny/' : '/'}${crrtPkm}.png`}
+        src={`${shiny ? shinyImg : frontImg}`}
         alt={`Image of ${crrtPkm}`}
       />
     </>

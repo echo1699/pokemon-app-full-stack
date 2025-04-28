@@ -9,10 +9,12 @@ interface Props {
   crrtPkm: number;
   nextPkm: string;
   prevPkm: string;
+  nextPkmImg: string;
+  prevPkmImg: string;
   setCurrentPkm: (value: number) => void;
 }
 
-const PNButton:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm}) => {
+const PNButton:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, nextPkmImg, prevPkmImg, setCurrentPkm}) => {
   const navigate = useNavigate()
   const handlePClick = () => {
     const realValue = crrtPkm - 1
@@ -38,7 +40,7 @@ const PNButton:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm
         <div className="bottom-part">
           <button className={`previous-evolution ${type}`} onClick={handlePClick}>
             <div className="previous-pokemon-image-container">
-              <PokeImagePrev crrtPkm={pkm.id}/>
+              <PokeImagePrev crrtPkm={pkm.id} pkmImg={prevPkmImg} />
             </div>
             <div>
               <div className="previous-evolution-text">PREVIOUS</div>
@@ -51,7 +53,7 @@ const PNButton:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, setCurrentPkm
               <div className='next-evolution-pokemon'>{nextPkm}</div>
             </div>
             <div className="next-pokemon-image-container">
-              <PokeImageNext crrtPkm={pkm.id}/>
+              <PokeImageNext crrtPkm={pkm.id} pkmImg={nextPkmImg} />
             </div>
           </button>
         </div>

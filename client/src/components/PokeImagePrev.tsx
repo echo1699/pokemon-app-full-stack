@@ -2,15 +2,16 @@ import React from 'react'
 
 interface Props {
   crrtPkm: number;
+  pkmImg: string;
 }
 
-const PokeImagePrev:React.FC<Props> = ({crrtPkm}) => {
-  if (crrtPkm > 2) {
+const PokeImagePrev:React.FC<Props> = ({crrtPkm, pkmImg}) => {
+  if (crrtPkm >= 2) {
     return (
       <>
         <img 
           className='previous-pokemon-image'
-          src={`../../public/png/official-artwork/${crrtPkm - 1}.png`}
+          src={`${pkmImg}`}
           alt={`Image ${crrtPkm - 1}`}
         />
       </>
