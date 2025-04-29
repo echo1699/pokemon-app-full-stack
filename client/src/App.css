@@ -85,7 +85,7 @@
 
 .home-button {
   position: absolute;
-  top: 580px;
+  top: 460px;
   left: 5px;
   border-style: solid;
   border-width: 5px;
@@ -100,7 +100,7 @@
 
 .pokedex-random-button {
   position: absolute;
-  top: 580px;
+  top: 460px;
   left: 105px;
   border-style: solid;
   border-width: 5px;

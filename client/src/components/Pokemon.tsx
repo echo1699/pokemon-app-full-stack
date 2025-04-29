@@ -84,6 +84,19 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, nextPkmImg, pr
             <div className="pokemon-image-container">
               <Slider onCheck={setShiny} type={type}/>
               <PokeImage crrtPkm={crrtPkm} frontImg={pkm.sprites.front} shinyImg={pkm.sprites.shiny} shiny={isShiny}/>
+              <button 
+                className={`home-button ${type}`}
+                onClick={handleHomeClick}
+                >Home
+              </button>
+              <button
+                className={`pokedex-random-button ${type}`} 
+                onClick={handleRandomClick}>
+                  <img 
+                    className={`random-icon-img`}
+                    src={random}
+                  />
+              </button>
             </div>
             <div className={`pokemon-stats-container ${type}`}>
               <div className="category-container">
@@ -101,19 +114,7 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, nextPkmImg, pr
               </div>
             </div>
           </div>
-          <button 
-            className={`home-button ${type}`}
-            onClick={handleHomeClick}
-            >Home
-          </button>
-          <button
-            className={`pokedex-random-button ${type}`} 
-            onClick={handleRandomClick}>
-              <img 
-                className={`random-icon-img`}
-                src={random}
-              />
-            </button>
+          
           <PNButton 
             pkm={pkm} 
             crrtPkm={crrtPkm} 
