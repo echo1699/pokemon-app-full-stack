@@ -42,7 +42,7 @@ const Pokemon:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, nextPkmImg, pr
     let randomValue = Math.floor(Math.random() * 151) + 1;
     setCurrentPkm(randomValue)
     console.log(`Generated a random Pokémon ID: ${randomValue}`)
-    navigate('/pokedex?id=' + randomValue)
+    navigate(`/pokedex/${randomValue}`)
   }
 
   const type: string = pkm.types[0].type.name

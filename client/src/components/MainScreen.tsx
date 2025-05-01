@@ -18,7 +18,7 @@ const MainScreen: React.FC<MainScreenProps> = ({setCurrentPkm }) => {
     if (!isNaN(parsedValue)) {
       setCurrentPkm(parsedValue)
       console.log(`Searching for Pokémon with ID: ${parsedValue}`)
-      navigate('/pokedex?id=' + parsedValue)
+      navigate(`/pokedex/${parsedValue}`)
     }
   }
 
@@ -26,7 +26,7 @@ const MainScreen: React.FC<MainScreenProps> = ({setCurrentPkm }) => {
     let randomValue = Math.floor(Math.random() * 151) + 1;
     setCurrentPkm(randomValue)
     console.log(`Generated a random Pokémon ID: ${randomValue}`)
-    navigate('/pokedex?id=' + randomValue)
+    navigate(`/pokedex/${randomValue}`)
   }
 
   return (

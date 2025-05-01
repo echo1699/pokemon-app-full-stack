@@ -21,7 +21,7 @@ const PNButton:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, nextPkmImg, p
     if (realValue > 0) { // Ensure the ID doesn't go below 1
       setCurrentPkm(realValue)
       console.log(`Navigating to Pokémon with ID: ${realValue}`)
-      navigate('/pokedex?id=' + realValue)
+      navigate(`/pokedex/${realValue}`)
     }
   }
 
@@ -30,7 +30,7 @@ const PNButton:React.FC<Props> = ({pkm, crrtPkm, nextPkm, prevPkm, nextPkmImg, p
     if (realValue < 152) { // Ensure the ID doesn't go above 151
       setCurrentPkm(realValue)
       console.log(`Navigating to Pokémon with ID: ${realValue}`)
-      navigate('/pokedex?id=' + realValue)
+      navigate(`/pokedex/${realValue}`)
     }
   }
 

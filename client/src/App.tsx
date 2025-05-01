@@ -8,7 +8,7 @@ import Pokemon from './components/Pokemon'
 import { PokemonType } from './types/Pokemon.types'
 import { Capitalize } from './components/Capitalize'
 import MainScreen from './components/MainScreen'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, useParams, useNavigate } from 'react-router-dom'
 
 function App() {
   const [pokemon, setArray] = useState<PokemonType[]>([])
@@ -44,14 +44,56 @@ function App() {
     fetchAPI()
   }, [])
 
+  const PokedexPage = () => {
+    const { id } = useParams<{ id: string }>()
+    const selectedId = parseInt(id || '1', 10)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+      setCurrentPkm(selectedId)
+    }, [selectedId]);
+
+    const selectedPkm = pokemon.find((pkm) => pkm.id === selectedId)
+
+    const handleHomeClick = () => {
+      console.log(`Going back to home`)
+      navigate('/')
+    }
+
+    if (!selectedPkm) {
+      return (
+        <>
+          <div>Pokémon not found</div>
+          <button 
+            className="home-button-error"
+            onClick={handleHomeClick}
+            >Home
+          </button>
+        </>
+      )
+    }
+
+    return (
+      <Pokemon
+        pkm={selectedPkm}
+        crrtPkm={currentPkm}
+        nextPkm={nextPkm || ''}
+        prevPkm={prevPkm || ''}
+        nextPkmImg={nextPkmImg || ''}
+        prevPkmImg={prevPkmImg || ''}
+        setCurrentPkm={setCurrentPkm}
+      />
+    )
+  }
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<MainScreen setCurrentPkm={setCurrentPkm} />} />
-        <Route path={`/pokedex`} element={
+        <Route path="/pokedex/:id" element={
           <div className="pokedex">
-            {pokemon.length > 0 ? pokemon.map((pkm:PokemonType) => 
-            <Pokemon pkm={pkm} crrtPkm={currentPkm} nextPkm={nextPkm} prevPkm={prevPkm} nextPkmImg={nextPkmImg || ''} prevPkmImg={prevPkmImg || ''} setCurrentPkm={setCurrentPkm}/>) 
+            {pokemon.length > 0 ? 
+            <PokedexPage /> 
             : 
             (<Loader />)}
           </div>
