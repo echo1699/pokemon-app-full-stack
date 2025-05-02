@@ -1,7 +1,7 @@
 import { fetchData } from './data-fetch-data.js';
 
 export async function fetchPokemonData() {
-  const data = await fetchData('https://pokeapi.co/api/v2/pokemon?limit=151');
+  const data = await fetchData('https://pokeapi.co/api/v2/pokemon?limit=1025');
 
   const all = await Promise.all(
     data.results.map( async (pkm) => {

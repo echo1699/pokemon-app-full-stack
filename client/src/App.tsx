@@ -13,6 +13,7 @@ import { BrowserRouter as Router, Route, Routes, useParams, useNavigate } from '
 function App() {
   const [pokemon, setArray] = useState<PokemonType[]>([])
   const [error, setError] = useState({})
+  const { id } = useParams<{ id: string }>()
 
   const [currentPkm, setCurrentPkm] = useState<number>(1)
 
@@ -45,7 +46,6 @@ function App() {
   }, [])
 
   const PokedexPage = () => {
-    const { id } = useParams<{ id: string }>()
     const selectedId = parseInt(id || '1', 10)
     const navigate = useNavigate()
 
