@@ -5,7 +5,7 @@ import cors from "cors";
 
 const app = express();
 const corsOptions = {
-  origin: ["https://pokedex-app-echo-new-831381062774.us-central1.run.app",
+  origin: ["https://pokedex-app-echo-831381062774.us-central1.run.app",
     "http://localhost:5173",
     "http://localhost:8080",
     "https://pokedex-app-echo-beta-831381062774.us-central1.run.app"
