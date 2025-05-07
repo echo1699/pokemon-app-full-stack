@@ -8,7 +8,8 @@ const corsOptions = {
   origin: ["https://pokedex-app-echo-new-831381062774.us-central1.run.app",
     "http://localhost:5173",
     "http://localhost:8080",
-    "https://pokedex-app-echo-beta-831381062774.us-central1.run.app"
+    "https://pokedex-app-echo-beta-831381062774.us-central1.run.app",
+    "https://pokedex-app-echo-hash-831381062774.us-central1.run.app"
   ]
 }
 const port = process.env.PORT || 3000;

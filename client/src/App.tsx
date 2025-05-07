@@ -8,7 +8,7 @@ import Pokemon from './components/Pokemon'
 import { PokemonType } from './types/Pokemon.types'
 import { Capitalize } from './components/Capitalize'
 import MainScreen from './components/MainScreen'
-import { BrowserRouter as Router, Route, Routes, useParams, useNavigate } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, useParams, useNavigate, HashRouter } from 'react-router-dom'
 
 function App() {
   const [pokemon, setArray] = useState<PokemonType[]>([])
@@ -87,7 +87,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<MainScreen setCurrentPkm={setCurrentPkm} />} />
         <Route path="/pokedex/:id" element={
@@ -99,7 +99,7 @@ function App() {
           </div>
         } />
       </Routes>
-    </Router>
+    </HashRouter>
   )
 }
 
