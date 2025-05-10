@@ -55,7 +55,7 @@ cd server
 npm install
 
 # For the frontend
-cd ../client
+cd client
 npm install
 ```
 
@@ -67,7 +67,7 @@ cd server
 npm run dev
 
 # Start frontend
-cd ../client
+cd client
 npm run dev
 ```
 
