@@ -79,3 +79,6 @@ npm run dev
 ## 🌐 Live Demo
 
 [![Pokédex Demo](https://i.imgur.com/EHm2a35.png)](https://pokedex-app-echo-hash-831381062774.us-central1.run.app)
+
+## 📜 License
+This project is licensed under the MIT License.
