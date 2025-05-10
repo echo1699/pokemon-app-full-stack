@@ -71,14 +71,20 @@ cd ../client
 npm run dev
 ```
 
+---
+
 ## 📸 Demo
 ![Pokédex Demo](https://i.imgur.com/EHm2a35.png)
 ![Pokédex Demo](https://i.imgur.com/EE4F4oW.png)
 ![Pokédex Demo](https://i.imgur.com/CIExQp3.png)
 
+---
+
 ## 🌐 Live Demo
 
 [![Pokédex Demo](https://i.imgur.com/EHm2a35.png)](https://pokedex-app-echo-hash-831381062774.us-central1.run.app)
+
+---
 
 ## 📜 License
 This project is licensed under the MIT License.
