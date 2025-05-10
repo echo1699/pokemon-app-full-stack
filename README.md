@@ -1,23 +1,81 @@
-# Pokédex App
+# 📘 Pokédex App
 
-## Overview
+A modern web application that displays detailed information about various Pokémon in a simple and interactive Pokédex interface.
 
-The Pokédex App is a web application built with Node.js and Express that allows users to view details about various Pokémon. The app fetches data from a Pokémon API and presents it in a user-friendly interface. The frontend uses React, Typescript, and Vite, taking the data given by the backend (hosted using Google Cloud) and display it in a "Pokédex" like manner.
+---
 
-### Features
+## 🧾 Overview
 
-Search for Pokémon by ID
+The **Pokédex App** is a full-stack web application built with **Node.js** and **Express** on the backend, and **React**, **TypeScript**, and **Vite** on the frontend. It fetches data from the [PokéAPI](https://pokeapi.co/) and presents it in a user-friendly layout.
 
-View detailed stats, abilities, and type information
+The backend is deployed using **Google Cloud**, while the frontend delivers a fast and responsive experience similar to the iconic Pokédex from the Pokémon universe.
 
-Responsive and interactive UI
+---
 
-Lightweight and fast performance
+## 🌟 Features
 
-Technologies Used
+- 🔍 **Search by ID** – Instantly find any Pokémon by entering its Pokédex ID  
+- 📊 **Detailed View** – See stats, abilities, types, and more  
+- 📱 **Responsive UI** – Works seamlessly on mobile and desktop  
+- ⚡ **High Performance** – Lightweight build using Vite for speed  
 
-### Backend: Node.js, Express, Google Cloud
+---
 
-### Frontend: HTML, CSS, JavaScript, Typescript, React
+## 🛠️ Technologies Used
 
-### API: PokéAPI (https://pokeapi.co/)
+**Frontend**  
+- HTML, CSS  
+- JavaScript, TypeScript  
+- React  
+- Vite  
+
+**Backend**  
+- Node.js  
+- Express  
+- Google Cloud (for deployment)  
+
+**API**  
+- [PokéAPI](https://pokeapi.co/) – Open-source Pokémon data
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/echo1699/pokemon-app-full-stack
+cd pokemon-app-full-stack
+```
+### 2. Install Dependencies
+
+```bash
+# For the backend
+cd server
+npm install
+
+# For the frontend
+cd ../client
+npm install
+```
+
+### 3. Start the App
+
+```bash
+# Start backend
+cd server
+npm run dev
+
+# Start frontend
+cd ../client
+npm run dev
+```
+
+## 📸 Demo
+![Pokédex Demo](https://i.imgur.com/EHm2a35.png)
+![Pokédex Demo](https://i.imgur.com/EE4F4oW.png)
+![Pokédex Demo](https://i.imgur.com/CIExQp3.png)
+
+## 🌐 Live Demo
+
+[![Pokédex Demo](https://i.imgur.com/EHm2a35.png)](https://pokedex-app-echo-hash-831381062774.us-central1.run.app)
