@@ -9,7 +9,8 @@ const corsOptions = {
     "http://localhost:5173",
     "http://localhost:8080",
     "https://pokedex-app-echo-beta-831381062774.us-central1.run.app",
-    "https://pokedex-app-echo-hash-831381062774.us-central1.run.app"
+    "https://pokedex-app-echo-hash-831381062774.us-central1.run.app",
+    "https://ubiquitous-donut-1a03bd.netlify.app"
   ]
 }
 const port = process.env.PORT || 3000;
